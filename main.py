@@ -29,6 +29,11 @@ def invoke_skill():
     return skill_adapter.dispatch_request()
 
 
+@app.route('/')
+def home():
+    return 'Running'
+
+
 def run():
     format_logger = '[%(time)s] %(status)s %(REQUEST_METHOD)s %(REQUEST_URI)s'
     serve(TransLogger(app, format=format_logger),
